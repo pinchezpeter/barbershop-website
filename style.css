@@ -1,0 +1,240 @@
+/* 1. Global Reset & Speed Optimization */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body { background-color: #f9f9f9; color: #333; line-height: 1.6; }
+
+/* 2. Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #111;
+    color: #fff;
+    position: sticky; /* Keeps menu at top while scrolling */
+    top: 0;
+    z-index: 2000;
+}
+
+.logo span { color: #d4af37; }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: 500; }
+
+/* 3. Hero Section */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.pexels.com/photos/1319461/pexels-photo-1319461.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 { font-size: 3rem; }
+.btn {
+    display: inline-block;
+    background: #d4af37;
+    color: #111;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* 4. Services Grid */
+.services { padding: 60px 8%; text-align: center; }
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.price { font-weight: bold; color: #d4af37; font-size: 1.2rem; display: block; margin-top: 10px; }
+
+/* 5. Gallery */
+.gallery { padding: 60px 8%; text-align: center; background: #fff; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.gallery-item { height: 250px; overflow: hidden; border-radius: 8px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+.gallery-item img:hover { transform: scale(1.05); }
+
+/* 6. Testimonials */
+.testimonials { padding: 60px 8%; background: #111; color: #fff; text-align: center; }
+.testimonial-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
+.testimonial-card { background: #222; padding: 25px; border-radius: 10px; border-left: 4px solid #d4af37; max-width: 320px; }
+
+/* 7. WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 3000;
+}
+
+.whatsapp-icon { width: 25px; height: 25px; }
+
+/* 8. Footer */
+footer { background: #111; color: #777; text-align: center; padding: 30px; border-top: 1px solid #222; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    nav { padding: 15px 5%; }
+    .whatsapp-float span { display: none; } /* Hide text on small phones */
+}
+  /*Previous style remain same,add these for About*/
+    .about{
+          padding:80px 8%;
+          background:#fff;
+     }
+.about-container {
+    display:flex;
+    align-items:center;
+    gap:50px
+   flex-wrap:wrap;/*importnt for Mobile */
+ }
+   .about-text{
+        flex:1;
+        min-width:300px;
+      }
+   
+   .about-text h2 {
+      font-size:2.5rem;
+        color:#111;
+        margine-bottom:20px;
+}
+     .about-image img{
+   width:100%;/*Fills the wd of the container*/
+   heigt:400px; /*forces the hei to be exactly 400px*/
+   border-radius:15px;
+  object-fit:cover;/*CROPS the image so it doesn't look squeshed*/
+  object-position:centerth:100%;
+   max-width:500px;/*Limits how wide the image area can get*/
+   margin:0 auto;/*Centers it on mobile*/
+ ;/*Ensures the middle of the photo is visible*/
+}    
+
+  /*Ensure mobile stacking*/
+ @media(max-width:768px){
+ .about-container{
+    flex-direction:column;
+    text-align:center;
+    }
+  .about-image img{
+   box-shadow:10px 10px 0px #d4af37;
+    }
+
+}
+ /*FAQ Section*/
+ .faq{
+   padding:80px;
+   background-color:#f9f9f9;
+   text-align:center;
+   }
+
+ .faq h2{
+   margine-bottom:40px;
+  font-size:2.5rem;
+}
+
+.faq-container{
+   max-width:800px;
+   margin:0 auto;
+   text-align:left;/*Questions look better left-align*/
+}
+
+ .faq-item{
+    background:#fff;
+    padding:20px;
+    margin-bottom:15px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0,0);
+   }
+
+ .faq-item h3{
+   color:#111;
+   font-size:1.1rem;
+   margin-bottom:10px
+ }
+
+ .faq-item p{
+   color:#666;
+   font-size:0.95rem;
+} 
+/*gallery zoom effect */
+  .gallery-item img.hover{
+     transform:scale(1.1);/*zooms in by 10%*/
+     transition:0.4s ease;/*makes zoom Smoot*/
+     cursor:pointer;/*changes mouse to hand icon*/
+}
+/*the service card lift*/
+   .card:hover{
+      transform:traslateY(-10px);/*lifts the cards up*/
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
+      transition:0.3s ease;
+}
+/*WhatsApp button pulse*/
+  .whatsapp-float:hover{
+    transform:scale(1.05);
+    background-color:#128c7e;/*slightly darker green on hover*/
+    transition:0.2s;
+}
+ #scrollTopBtn {
+    display: none;        /* Hidden by default, we'll show it with JS later */
+    position: fixed;      /* Pinned to the screen */
+    bottom: 20px;         /* 20px from the bottom */
+    right: 30px;          /* 30px from the right */
+    z-index: 99;          /* Makes sure it stays on top of other elements */
+    border: none;
+    outline: none;
+    background-color: #d4af37; /* Our barbershop gold color */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;   /* Makes it a circle */
+    font-size: 18px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+#scrollTopBtn:hover {
+    background-color: #bfa030; /* Darkens slightly when hovered */
+}
